@@ -6,6 +6,12 @@ repositories {
     jcenter()
 }
 
+configurations {
+    [compileClasspath, testCompileClasspath].each {
+        it.resolutionStrategy.activateDependencyLocking()
+    }
+}
+
 dependencies {
     implementation "com.sparkjava:spark-core:2.7.2"
     runtimeOnly "org.slf4j:slf4j-simple:1.7.30"
